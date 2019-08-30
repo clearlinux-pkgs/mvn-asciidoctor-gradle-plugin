@@ -4,7 +4,7 @@
 #
 Name     : mvn-asciidoctor-gradle-plugin
 Version  : elease.1.5.3
-Release  : 2
+Release  : 3
 URL      : https://github.com/asciidoctor/asciidoctor-gradle-plugin/archive/release_1_5_3.tar.gz
 Source0  : https://github.com/asciidoctor/asciidoctor-gradle-plugin/archive/release_1_5_3.tar.gz
 Source1  : https://repo.gradle.org/gradle/libs-releases/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3/asciidoctor-gradle-plugin-1.5.3.jar
