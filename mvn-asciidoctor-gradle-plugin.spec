@@ -4,16 +4,20 @@
 #
 Name     : mvn-asciidoctor-gradle-plugin
 Version  : elease.1.5.3
-Release  : 3
+Release  : 4
 URL      : https://github.com/asciidoctor/asciidoctor-gradle-plugin/archive/release_1_5_3.tar.gz
 Source0  : https://github.com/asciidoctor/asciidoctor-gradle-plugin/archive/release_1_5_3.tar.gz
-Source1  : https://repo.gradle.org/gradle/libs-releases/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3/asciidoctor-gradle-plugin-1.5.3.jar
-Source2  : https://repo.gradle.org/gradle/libs-releases/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3/asciidoctor-gradle-plugin-1.5.3.pom
+Source1  : https://repo.gradle.org/gradle/libs-releases/org/asciidoctor/asciidoctor-gradle-plugin/1.5.10/asciidoctor-gradle-plugin-1.5.10.jar
+Source2  : https://repo.gradle.org/gradle/libs-releases/org/asciidoctor/asciidoctor-gradle-plugin/1.5.10/asciidoctor-gradle-plugin-1.5.10.pom
+Source3  : https://repo.gradle.org/gradle/libs-releases/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3/asciidoctor-gradle-plugin-1.5.3.jar
+Source4  : https://repo.gradle.org/gradle/libs-releases/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3/asciidoctor-gradle-plugin-1.5.3.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: mvn-asciidoctor-gradle-plugin-data = %{version}-%{release}
 Requires: mvn-asciidoctor-gradle-plugin-license = %{version}-%{release}
+BuildRequires : buildreq-mvn
+BuildRequires : gradle
 
 %description
 = Asciidoctor Gradle Plugin
@@ -58,11 +62,17 @@ license components for the mvn-asciidoctor-gradle-plugin package.
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/mvn-asciidoctor-gradle-plugin
 cp LICENSE.txt %{buildroot}/usr/share/package-licenses/mvn-asciidoctor-gradle-plugin/LICENSE.txt
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3/asciidoctor-gradle-plugin-1.5.3.jar
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.10
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.10/asciidoctor-gradle-plugin-1.5.10.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.10
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.10/asciidoctor-gradle-plugin-1.5.10.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3/asciidoctor-gradle-plugin-1.5.3.pom
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3/asciidoctor-gradle-plugin-1.5.3.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3/asciidoctor-gradle-plugin-1.5.3.pom
 
 
 %files
@@ -70,6 +80,8 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/asciidoctor/asciido
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.10/asciidoctor-gradle-plugin-1.5.10.jar
+/usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.10/asciidoctor-gradle-plugin-1.5.10.pom
 /usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3/asciidoctor-gradle-plugin-1.5.3.jar
 /usr/share/java/.m2/repository/org/asciidoctor/asciidoctor-gradle-plugin/1.5.3/asciidoctor-gradle-plugin-1.5.3.pom
 
